@@ -32,7 +32,7 @@ public class ExchangeRateClient {
     }
 
     public ConversionRateResponse getExchangeRate(String sourceCurrency, String targetCurrency, double amount) {
-        String url = baseUrl + apiKey + "/pair/" + sourceCurrency + "/" + targetCurrency + "/" + amount;
+        String url = this.baseUrl + this.apiKey + "/pair/" + sourceCurrency + "/" + targetCurrency + "/" + amount;
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .timeout(Duration.ofSeconds(10))
