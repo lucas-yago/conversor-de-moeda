@@ -39,6 +39,10 @@ public class ExchangeRateClient {
                 .GET()
                 .build();
         try {
+            if(amount < 0){
+                throw  new RuntimeException("Não é possível converter valores negativos.");
+            }
+
 
             HttpResponse<String> response = client.
                     send(request, HttpResponse.BodyHandlers.ofString());
